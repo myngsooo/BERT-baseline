@@ -31,7 +31,6 @@ class EngineForBert(MyEngine):
 
         x = x[:, :engine.config.max_length]
 
-        # Feed-Forward
         y_hat = engine.model(x, attention_mask=mask).logits
 
         loss = engine.crit(y_hat, y)
