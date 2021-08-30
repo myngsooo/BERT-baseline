@@ -144,7 +144,6 @@ def main(config):
         model.cuda(config.gpu_id)
         crit.cuda(config.gpu_id)
 
-    # Train.
     trainer = Trainer(config)
     model = trainer.train(
         model,
