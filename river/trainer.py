@@ -43,7 +43,6 @@ class MyEngine(Engine):
 
         x = x[:, :engine.config.max_length]
 
-        # Feed-Forward
         y_hat = engine.model(x)
 
         loss = engine.crit(y_hat, y)
@@ -57,7 +56,6 @@ class MyEngine(Engine):
         p_norm = float(get_parameter_norm(engine.model.parameters()))
         g_norm = float(get_grad_norm(engine.model.parameters()))
 
-        # Gradient Descent
         engine.optimizer.step()
 
         return {
