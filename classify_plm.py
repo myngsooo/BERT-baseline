@@ -78,7 +78,6 @@ def main(config):
             mask = mini_batch['attention_mask']
             mask = mask.to(device)
 
-            # Feed-Forward
             y_hat = F.softmax(model(x, attention_mask=mask).logits, dim=-1)
 
             y_hats += [y_hat]
