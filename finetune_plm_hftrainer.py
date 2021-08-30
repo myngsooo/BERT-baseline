@@ -20,12 +20,8 @@ def define_argparser():
 
     p.add_argument('--model_fn', required=True)
     p.add_argument('--train_fn', required=True)
-    #   model list:
-    # - kykim/bert-kor-base
-    # - kykim/albert-kor-base
-    # - beomi/kcbert-base
-    # - beomi/kcbert-large
-    p.add_argument('--pretrained_model_name', type=str, default='beomi/kcbert-base')
+    
+    p.add_argument('--pretrained_model_name', type=str, default='kykim/bert-kor-base')
     p.add_argument('--use_albert', action='store_true')
 
     p.add_argument('--valid_ratio', type=float, default=.2)
